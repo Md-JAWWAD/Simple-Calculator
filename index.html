@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script>
+        function calculate() {
+            // Prompt for first number
+            let num1 = prompt("Enter the first number:");
+            // Check if the input is a valid number
+            if (isNaN(num1) || num1 === "") {
+                alert("Invalid input! Please enter a numeric value.");
+                return;
+            }
+
+            // Prompt for second number
+            let num2 = prompt("Enter the second number:");
+            // Check if the input is a valid number
+            if (isNaN(num2) || num2 === "") {
+                alert("Invalid input! Please enter a numeric value.");
+                return;
+            }
+
+            // Convert inputs to numbers
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // Prompt for the operation
+            let operation = prompt("Choose an operation (+, -, *, /):");
+            let result;
+
+            // Perform the chosen operation
+            if (operation === "+") {
+                result = num1 + num2;
+            } else if (operation === "-") {
+                result = num1 - num2;
+            } else if (operation === "*") {
+                result = num1 * num2;
+            } else if (operation === "/") {
+                if (num2 === 0) {
+                    alert("Error! Division by zero is not allowed.");
+                    return;
+                }
+                result = num1 / num2;
+            } else {
+                alert("Invalid operation! Please choose +, -, *, or /.");
+                return;
+            }
+
+            // Display the result
+            alert("The result is: " + result);
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <button onclick="calculate()">Start Calculator</button>
+</body>
+</html>
